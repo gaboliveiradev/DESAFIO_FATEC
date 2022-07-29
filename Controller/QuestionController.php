@@ -1,7 +1,7 @@
 <?php
-    class QuestionController {
+    class QuestionController extends Controller {
 
         public static function registerQuestionView() {
-            include "./View/modules/Question/register_question.php";
+            parent::render("Question/register_question");
         }
     }
