@@ -50,4 +50,15 @@
 
             return $stmt->fetchObject("QuestionModel");
         }
+
+        function queryQuestion($data_query) {
+            $data = "%". $data_query . "%";
+            $sql = "SELECT * FROM pergunta WHERE descricao LIKE ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $data);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
     }

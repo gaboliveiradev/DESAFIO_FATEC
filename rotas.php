@@ -15,4 +15,8 @@
         case "/question/delete":
             QuestionController::deleteQuestion();
         break;
+
+        case "/question/clear-query":
+            QuestionController::clearQuery();
+        break;
     }

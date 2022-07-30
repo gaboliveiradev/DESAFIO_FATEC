@@ -2,7 +2,6 @@
     class QuestionModel {
 
         public $id, $descricao;
-        public $arr_question;
 
         public function saveQuestion() {
             $dao = new QuestionDAO();
@@ -11,7 +10,7 @@
 
         public function getAllRows() {
             $dao = new QuestionDAO();
-            $this->arr_question = $dao->getAllRows();
+            return $dao->getAllRows();
         }
 
         public function delete(int $id) {
@@ -23,5 +22,10 @@
             $dao = new QuestionDAO();
             $obj = $dao->getById($id);
             return ($obj) ? $obj : new QuestionModel();
+        }
+
+        public function queryQuestion($data_query) {
+            $dao = new QuestionDAO();
+            return $dao->queryQuestion($data_query);
         }
     }
