@@ -13,9 +13,9 @@
         <?php include "./View/includes/cabecalho.php" ?>
     </header>
     <main class="container-question flex">
-        <form action="" method="POST" class="form-question">
+        <form action="/question/save" method="POST" class="form-question">
             <div class="form-floating">
-              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea name="descricao" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
               <label for="floatingTextarea2">Escreva sua pergunta...</label>
             </div>
             <div class="d-grid gap-2">

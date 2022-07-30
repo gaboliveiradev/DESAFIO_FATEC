@@ -3,4 +3,8 @@
         case "/question/register":
             QuestionController::registerQuestionView();
         break;
+
+        case "/question/save":
+            QuestionController::saveQuestion();
+        break;
     }

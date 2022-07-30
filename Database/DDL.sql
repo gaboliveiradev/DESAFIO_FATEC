@@ -3,7 +3,7 @@ USE agatecnologia_db;
 
 CREATE TABLE pergunta (
     id int auto_increment NOT NULL,
-    titulo text NOT NULL,
+    descricao text NOT NULL,
     primary key (id)
 );
 
