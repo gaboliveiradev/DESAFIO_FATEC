@@ -27,4 +27,12 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_CLASS);
         }
+
+        function delete(int $id) {
+            $sql = "DELETE FROM pergunta WHERE id = ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+        }
     }

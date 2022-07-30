@@ -24,7 +24,7 @@
                             <a style="text-align: left;" href="">
                                 <i class='bx bxs-message-square-edit'></i>
                             </a>
-                            <a href="">
+                            <a href="/question/delete?id=<?= $item->id ?>">
                                 <i class='bx bxs-trash'></i>
                             </a>
                         </div>

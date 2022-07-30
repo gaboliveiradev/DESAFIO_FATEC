@@ -11,4 +11,8 @@
         case "/question/save":
             QuestionController::saveQuestion();
         break;
+
+        case "/question/delete":
+            QuestionController::deleteQuestion();
+        break;
     }

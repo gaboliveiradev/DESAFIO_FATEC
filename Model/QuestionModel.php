@@ -13,4 +13,9 @@
             $dao = new QuestionDAO();
             $this->arr_question = $dao->getAllRows();
         }
+
+        public function delete(int $id) {
+            $dao = new QuestionDAO();
+            $dao->delete($id);
+        }
     }
