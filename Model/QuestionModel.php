@@ -18,4 +18,10 @@
             $dao = new QuestionDAO();
             $dao->delete($id);
         }
+
+        public function getById(int $id) {
+            $dao = new QuestionDAO();
+            $obj = $dao->getById($id);
+            return ($obj) ? $obj : new QuestionModel();
+        }
     }

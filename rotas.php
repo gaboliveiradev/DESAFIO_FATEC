@@ -4,8 +4,8 @@
             QuestionController::questionView();
         break;
         
-        case "/question/register":
-            QuestionController::registerQuestionView();
+        case "/question/form":
+            QuestionController::questionForm();
         break;
 
         case "/question/save":

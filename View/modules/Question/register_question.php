@@ -14,13 +14,15 @@
     </header>
     <main class="container-question flex">
         <form action="/question/save" method="POST" class="form-question">
+            <input type="hidden" name="id" value="<?= $model->id ?>">
             <div class="form-floating">
-              <textarea name="descricao" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea name="descricao" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><?= $model->descricao ?></textarea>
               <label for="floatingTextarea2">Escreva sua pergunta...</label>
             </div>
             <div class="d-grid gap-2">
               <br>
-              <button class="btn btn-dark" type="submit">Registrar</button>
+              <?php $msg = (!isset($_GET['id'])) ? "Registrar" : "Atualizar" ?>
+              <button class="btn btn-dark" type="submit"><?= $msg ?></button>
             </div>
         </form>
     </main>

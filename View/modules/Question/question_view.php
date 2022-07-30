@@ -21,8 +21,8 @@
                     <p>
                         <?= $item->id ?> - <?= $item->descricao ?>
                         <div style="text-align: right;">
-                            <a style="text-align: left;" href="">
-                                <i class='bx bxs-message-square-edit'></i>
+                            <a style="text-align: left;" href="/question/form?id=<?= $item->id ?>">
+                                Editar
                             </a>
                             <a href="/question/delete?id=<?= $item->id ?>">
                                 <i class='bx bxs-trash'></i>
@@ -32,6 +32,11 @@
                 </div>
                 <hr>
             <?php endforeach ?>
+            <?php if (count($model->arr_question) == 0) : ?>
+                <p>
+                    <a href="/question/form">Não existe nenhuma pergunta registrada em nosso questionário, clique aqui para cadastrar sua primeira pergunta.</a>
+                </p>
+            <?php endif ?>
         </section>
     </main>
     <?php include "./View/includes/js_config.php" ?>

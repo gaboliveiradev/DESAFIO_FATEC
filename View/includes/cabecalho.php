@@ -18,7 +18,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/question">Visualizar</a></li>
-                <li><a class="dropdown-item" href="/question/register">Cadastrar</a></li>
+                <li><a class="dropdown-item" href="/question/form">Cadastrar</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

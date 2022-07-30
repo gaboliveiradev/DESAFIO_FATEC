@@ -17,7 +17,12 @@
         }
 
         function updateQuestion(QuestionModel $model) {
-
+            $sql = "UPDATE pergunta SET descricao = ? WHERE id = ?";
+            
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $model->descricao);
+            $stmt->bindValue(2, $model->id);
+            $stmt->execute();
         }
 
         function getAllRows() {
@@ -34,5 +39,15 @@
             $stmt = $this->conexao->prepare($sql);
             $stmt->bindValue(1, $id);
             $stmt->execute();
+        }
+
+        function getById(int $id) {
+            $sql = "SELECT * FROM pergunta WHERE id = ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+
+            return $stmt->fetchObject("QuestionModel");
         }
     }
