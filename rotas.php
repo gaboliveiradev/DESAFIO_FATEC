@@ -25,4 +25,8 @@
         case "/login":
             LoginController::loginView();
         break;
+
+        case "/login/authenticate":
+            LoginController::loginAuthenticate();
+        break;
     }

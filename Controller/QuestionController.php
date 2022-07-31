@@ -17,7 +17,7 @@
                 $arr_question = $model->getAllRows();
             }
 
-            include "./View/modules/Question/question_view.php";
+            include "./View/modules/Question/question_manage.php";
         }
 
         public static function clearQuery() {
