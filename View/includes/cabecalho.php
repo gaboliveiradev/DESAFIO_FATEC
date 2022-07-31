@@ -17,7 +17,7 @@
                 Perguntas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/question">Visualizar</a></li>
+                <li><a class="dropdown-item" href="/question-manage">Visualizar</a></li>
                 <li><a class="dropdown-item" href="/question/form">Cadastrar</a></li>
               </ul>
             </li>
@@ -32,7 +32,7 @@
             </li>
           </ul>
           <form class="d-flex">
-            <button class="btn btn-light" type="submit">Área Restrita</button>
+            <a href="/login" class="btn btn-light" type="submit">Área Restrita</a>
           </form>
         </div>
     </div>

@@ -22,7 +22,7 @@
 
         public static function clearQuery() {
             unset($_GET['query']);
-            header("Location: /question");
+            header("Location: /question-manage");
         }
 
         public static function saveQuestion() {
@@ -30,7 +30,7 @@
             $model->id = $_POST['id'];
             $model->descricao = $_POST['descricao'];
             $model->saveQuestion();
-            header("Location: /question");
+            header("Location: /question-manage");
         }
 
         public static function deleteQuestion() {

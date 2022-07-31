@@ -1,6 +1,7 @@
 <?php
     switch($parse_uri) {
-        case "/question":
+        // --= Question =--
+        case "/question-manage":
             QuestionController::questionView();
         break;
         
@@ -18,5 +19,10 @@
 
         case "/question/clear-query":
             QuestionController::clearQuery();
+        break;
+
+        // --= Login =--
+        case "/login":
+            LoginController::loginView();
         break;
     }
