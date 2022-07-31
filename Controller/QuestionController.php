@@ -47,4 +47,27 @@
             $model->delete( (int) $_GET['id']);
             header("Location: /question-manage");
         }
+
+        public static function saveAnswer() {
+            $model = new QuestionModel();
+            $arr_question = $model->getAllRows();
+            $arr_answer = []; 
+            $arr_ids = [];
+
+            $model->questions = count($arr_question);
+            for($i = 1; $i < count($arr_question) + 1; $i++) {
+                $name_answer = "question_$i";
+                $id_answer = "id_$i";
+                $arr_answer[$i] = $_POST[$name_answer];
+                $arr_ids[$i] = $_POST[$id_answer];
+                //echo $name."<br>";
+            }
+
+            $model->saveAnswer($arr_answer, $arr_ids);
+            header("Location: /question");
+
+            /*var_dump($arr_answer);
+            echo "<br>";
+            var_dump($arr_ids);*/
+        }
     }

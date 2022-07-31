@@ -25,6 +25,11 @@
             QuestionController::questionAnswer();
         break;
 
+        // --= Answer =--
+        case "/answer/save":
+            QuestionController::saveAnswer();
+        break;
+
         // --= Login =--
         case "/login":
             LoginController::loginView();

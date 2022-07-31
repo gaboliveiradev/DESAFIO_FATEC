@@ -26,7 +26,7 @@
         }
 
         function getAllRows() {
-            $sql = "SELECT * FROM pergunta";
+            $sql = "SELECT * FROM pergunta WHERE ativo = \"S\"";
 
             $stmt = $this->conexao->prepare($sql);
             $stmt->execute();
@@ -34,7 +34,7 @@
         }
 
         function delete(int $id) {
-            $sql = "DELETE FROM pergunta WHERE id = ?";
+            $sql = "UPDATE pergunta SET ativo = \"N\" WHERE id = ?";
 
             $stmt = $this->conexao->prepare($sql);
             $stmt->bindValue(1, $id);
@@ -60,5 +60,16 @@
             $stmt->execute();
 
             return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        function insertAnswer(QuestionModel $model, $arr_answer, $arr_ids) {
+            for($i = 1; $i < $model->questions + 1; $i++) {
+                $sql = "INSERT INTO resposta (id_pergunta, descricao) VALUES (?, ?)";
+
+                $stmt = $this->conexao->prepare($sql);
+                $stmt->bindValue(1, $arr_ids[$i]);
+                $stmt->bindValue(2, $arr_answer[$i]);
+                $stmt->execute();
+            }
         }
     }

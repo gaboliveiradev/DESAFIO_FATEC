@@ -2,10 +2,16 @@
     class QuestionModel {
 
         public $id, $descricao;
+        public int $questions;
 
         public function saveQuestion() {
             $dao = new QuestionDAO();
             return($this->id == null) ? $dao->insertQuestion($this) : $dao->updateQuestion($this);
+        }
+
+        public function saveAnswer($arr_answer, $arr_ids) {
+            $dao = new QuestionDAO();
+            $dao->insertAnswer($this, $arr_answer, $arr_ids);
         }
 
         public function getAllRows() {
