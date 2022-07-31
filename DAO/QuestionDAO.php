@@ -64,12 +64,14 @@
 
         function insertAnswer(QuestionModel $model, $arr_answer, $arr_ids) {
             for($i = 1; $i < $model->questions + 1; $i++) {
-                $sql = "INSERT INTO resposta (id_pergunta, descricao) VALUES (?, ?)";
+                if($arr_answer[$i] != null) {
+                    $sql = "INSERT INTO resposta (id_pergunta, descricao) VALUES (?, ?)";
 
-                $stmt = $this->conexao->prepare($sql);
-                $stmt->bindValue(1, $arr_ids[$i]);
-                $stmt->bindValue(2, $arr_answer[$i]);
-                $stmt->execute();
+                    $stmt = $this->conexao->prepare($sql);
+                    $stmt->bindValue(1, $arr_ids[$i]);
+                    $stmt->bindValue(2, $arr_answer[$i]);
+                    $stmt->execute();
+                }
             }
         }
     }
