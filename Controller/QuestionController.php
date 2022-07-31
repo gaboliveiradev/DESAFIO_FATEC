@@ -7,8 +7,12 @@
 
             parent::render("Question/register_question", $model);
         }
-        
+
         public static function questionView() {
+            include "./View/modules/Question/answer_question.php";
+        }
+        
+        public static function questionAnswer() {
             $model = new QuestionModel();
 
             if(isset($_GET['query'])) {

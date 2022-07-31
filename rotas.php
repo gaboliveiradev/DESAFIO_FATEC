@@ -2,7 +2,7 @@
     switch($parse_uri) {
         // --= Question =--
         case "/question-manage":
-            QuestionController::questionView();
+            QuestionController::questionAnswer();
         break;
         
         case "/question/form":
@@ -21,6 +21,10 @@
             QuestionController::clearQuery();
         break;
 
+        case "/question":
+            QuestionController::questionView();
+        break;
+
         // --= Login =--
         case "/login":
             LoginController::loginView();
@@ -28,5 +32,13 @@
 
         case "/login/authenticate":
             LoginController::loginAuthenticate();
+        break;
+
+        case "/logout":
+            LoginController::logout();
+        break;
+
+        default:
+            header("Location: /question");
         break;
     }

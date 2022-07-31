@@ -21,18 +21,24 @@
                 <li><a class="dropdown-item" href="/question/form">Cadastrar</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Funcionários
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-              </ul>
-            </li>
+            <?php if($_SESSION['user']->adm == "S"): ?>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Funcionários
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                </ul>
+              </li>
+            <?php endif; ?>
           </ul>
           <form class="d-flex">
-            <a href="/login" class="btn btn-light" type="submit">Área Restrita</a>
+            <?php if(isset($_SESSION['user'])): ?>
+              <a href="/logout?exit=true" class="btn btn-light" type="submit">Logout</a>
+            <?php else: ?>
+              <a href="/login" class="btn btn-light" type="submit">Área Restrita</a>
+            <?php endif; ?>
           </form>
         </div>
     </div>

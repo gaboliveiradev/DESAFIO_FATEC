@@ -12,4 +12,11 @@
             $model->senha = $_POST['senha'];
             $model->loginAuthenticate();
         }
+
+        public static function logout() {
+            if(isset($_GET['exit'])) {
+                unset($_SESSION['user']);
+                header("Location: /login");
+            }
+        }
     }
