@@ -2,17 +2,19 @@
     class QuestionController extends Controller {
 
         public static function questionForm() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
             if(isset($_GET['id'])) $model = $model->getById( (int) $_GET['id']);
 
             parent::render("Question/register_question", $model);
         }
 
-        public static function questionView() {
+        public static function questionAnswer() {
             include "./View/modules/Question/answer_question.php";
         }
         
-        public static function questionAnswer() {
+        public static function questionManage() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
 
             if(isset($_GET['query'])) {

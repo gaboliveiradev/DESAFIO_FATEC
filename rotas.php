@@ -2,7 +2,7 @@
     switch($parse_uri) {
         // --= Question =--
         case "/question-manage":
-            QuestionController::questionAnswer();
+            QuestionController::questionManage();
         break;
         
         case "/question/form":
@@ -22,7 +22,7 @@
         break;
 
         case "/question":
-            QuestionController::questionView();
+            QuestionController::questionAnswer();
         break;
 
         // --= Login =--
