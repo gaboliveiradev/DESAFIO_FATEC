@@ -15,9 +15,6 @@
 
     <main>
         <section>
-
-        </section>
-        <section>
             <div class="container-search">
                 <form action="/question-manage?query=" method="GET" class="form-search d-flex">
                     <input name="query" value="<?= (isset($_GET['query'])) ? $_GET['query'] : "" ?>" class="form-control me-2" type="search" placeholder="Buscar por palavra-chave" aria-label="Search">
@@ -30,7 +27,7 @@
                 <?php endif; ?>
             </div>
             <div class="header-questions">
-                <h4>Perguntas Criadas</h4>
+                <h4>Temos um total de <?= count($arr_question) ?> perguntas</h4>
             </div>
             <div class="container-questions">
                 <?php foreach ($arr_question as $item): ?>

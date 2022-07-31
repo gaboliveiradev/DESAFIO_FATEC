@@ -10,6 +10,9 @@
         }
 
         public static function questionAnswer() {
+            $model = new QuestionModel();
+            $arr_question = $model->getAllRows();
+
             include "./View/modules/Question/question_answer.php";
         }
         
