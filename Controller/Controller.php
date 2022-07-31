@@ -1,6 +1,11 @@
 <?php
     abstract class Controller {
 
+        protected static function isAuthenticated() {
+            if(!isset($_SESSION['user']))
+                header("Location: /login");
+        }
+
         protected static function render($view, $model = null) {
             $arquivo = "./View/modules/$view.php";
 
