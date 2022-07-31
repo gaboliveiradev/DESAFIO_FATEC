@@ -42,6 +42,6 @@
         public static function deleteQuestion() {
             $model = new QuestionModel();
             $model->delete( (int) $_GET['id']);
-            header("Location: /question");
+            header("Location: /question-manage");
         }
     }

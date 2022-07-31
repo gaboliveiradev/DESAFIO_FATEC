@@ -19,7 +19,7 @@
         </section>
         <section>
             <div class="container-search">
-                <form action="/question?query=" method="GET" class="form-search d-flex">
+                <form action="/question-manage?query=" method="GET" class="form-search d-flex">
                     <input name="query" value="<?= (isset($_GET['query'])) ? $_GET['query'] : "" ?>" class="form-control me-2" type="search" placeholder="Buscar por palavra-chave" aria-label="Search">
                     <button class="btn btn-primary" type="submit">Buscar</button> 
                 </form>
@@ -49,9 +49,15 @@
                     </div>
                 <?php endforeach ?>
                 <?php if (count($arr_question) == 0) : ?>
-                    <p>
-                        <a href="/question/form">Não existe nenhuma pergunta registrada em nosso questionário, clique aqui para cadastrar sua primeira pergunta.</a>
-                    </p>
+                    <?php if(isset($_GET['query'])): ?>
+                        <p>
+                            <a href="/question/clear-query">Não foi possível encontrar nenhuma pergunta com a palavra-chave ["<?= $_GET['query'] ?>"]. Clique aqui para limpar a sua busca</a>
+                        </p>
+                    <?php else: ?>
+                        <p>
+                            <a href="/question/form">Não existe nenhuma pergunta registrada em nosso questionário, clique aqui para cadastrar sua primeira pergunta.</a>
+                        </p>
+                    <?php endif; ?>
                 <?php endif ?>
             </div>
         </section>
