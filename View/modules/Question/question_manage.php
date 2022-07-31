@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "./View/includes/css_config.php" ?>
-    <link rel="stylesheet" href="./../../../View/css/question_view.css">
+    <link rel="stylesheet" href="./../../../View/css/question_manage.css">
     <title>AGA Tecnologia - Área Administrativa | Visualizar Perguntas</title>
 </head>
 <body>

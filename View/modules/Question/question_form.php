@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "./View/includes/css_config.php" ?>
-    <link rel="stylesheet" href="./../../../View/css/register_question.css">
+    <link rel="stylesheet" href="./../../../View/css/question_form.css">
     <title>AGA Tecnologia - Área Administrativa | Cadastrar Perguntas</title>
 </head>
 <body>

@@ -6,11 +6,11 @@
             $model = new QuestionModel();
             if(isset($_GET['id'])) $model = $model->getById( (int) $_GET['id']);
 
-            parent::render("Question/register_question", $model);
+            parent::render("Question/question_form", $model);
         }
 
         public static function questionAnswer() {
-            include "./View/modules/Question/answer_question.php";
+            include "./View/modules/Question/question_answer.php";
         }
         
         public static function questionManage() {
