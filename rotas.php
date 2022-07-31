@@ -30,6 +30,10 @@
             QuestionController::saveAnswer();
         break;
 
+        case "/answer-manage":
+            AnswerController::answerManage();
+        break;
+
         // --= Login =--
         case "/login":
             LoginController::loginView();
