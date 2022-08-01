@@ -60,14 +60,13 @@
                 $id_answer = "id_$i";
                 $arr_answer[$i] = $_POST[$name_answer];
                 $arr_ids[$i] = $_POST[$id_answer];
-                //echo $name."<br>";
             }
 
             $model->saveAnswer($arr_answer, $arr_ids);
             header("Location: /question");
+        }
 
-            /*var_dump($arr_answer);
-            echo "<br>";
-            var_dump($arr_ids);*/
+        public static function questionDeleted() {
+            include "./View/modules/Question/question_deleted.php";
         }
     }

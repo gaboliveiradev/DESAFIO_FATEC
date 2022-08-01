@@ -21,6 +21,10 @@
             QuestionController::clearQuery();
         break;
 
+        case "/question/deleted":
+            QuestionController::questionDeleted();
+        break;
+
         case "/question":
             QuestionController::questionAnswer();
         break;

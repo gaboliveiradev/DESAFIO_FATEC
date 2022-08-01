@@ -19,6 +19,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/question-manage">Visualizar</a></li>
                 <li><a class="dropdown-item" href="/question/form">Cadastrar</a></li>
+                <li><a class="dropdown-item" href="/question/deleted">Perguntas Deletadas</a></li>
                 <li><hr></li>
                 <li><a class="dropdown-item" href="/answer-manage">Ver Respostas</a></li>
               </ul>
