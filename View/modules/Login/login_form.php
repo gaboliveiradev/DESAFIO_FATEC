@@ -33,7 +33,7 @@
                     </label>
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary">Entrar</button>
-                <a href="/question-manage" type="submit" class="btn btn-lg btn-danger">Voltar ao Questionário</a>
+                <a href="/question" type="submit" class="btn btn-lg btn-danger">Voltar ao Questionário</a>
                 <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
             </form>
         </div>

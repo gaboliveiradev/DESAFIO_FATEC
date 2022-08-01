@@ -12,6 +12,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/question">Questionário</a>
             </li>
+            <?php if(isset($_SESSION['user'])): ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Perguntas
@@ -34,6 +35,7 @@
                   <li><a class="dropdown-item" href="#">Cadastrar</a></li>
                 </ul>
               </li>
+            <?php endif; ?>
             <?php endif; ?>
           </ul>
           <form class="d-flex">
