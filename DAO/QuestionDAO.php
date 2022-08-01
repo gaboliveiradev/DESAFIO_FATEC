@@ -74,4 +74,21 @@
                 }
             }
         }
+
+        function selectQuestionWhereAtivo() {
+            $sql = "SELECT * FROM pergunta WHERE ativo = \"N\"";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        function restoreQuestion(int $id) {
+            $sql = "UPDATE pergunta SET ativo = \"S\" WHERE id = ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+        }
     }

@@ -67,6 +67,16 @@
         }
 
         public static function questionDeleted() {
+            $model = new QuestionModel();
+            $arr_question_deleted = $model->getAllRowsWhereAtivo();
+            
             include "./View/modules/Question/question_deleted.php";
+        }
+
+        public static function toRestore() {
+            $model = new QuestionModel();
+            $model->toRestore( (int) $_GET['id'] );
+
+            header("Location: /question/deleted");
         }
     }

@@ -1,0 +1,38 @@
+.container-questions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-questions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container-search {
+    margin-top: 10px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.form-search {
+    width: 50%;
+}
+
+.icon-clear-query a {
+    text-decoration: none;
+}
+
+.icon-clear-query {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.card {
+    margin: 10px;
+    width: 40%;
+}
