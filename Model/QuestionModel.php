@@ -40,6 +40,11 @@
             return $dao->queryQuestion($data_query);
         }
 
+        public function queryQuestionDeleted($data_query) {
+            $dao = new QuestionDAO();
+            return $dao->queryQuestionDeleted($data_query);
+        }
+
         public function toRestore(int $id) {
             $dao = new QuestionDAO();
             $dao->restoreQuestion( (int) $id );

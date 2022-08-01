@@ -25,6 +25,10 @@
             QuestionController::questionDeleted();
         break;
 
+        case "/question/deleted/clear-query":
+            QuestionController::clearQueryQuestionDeleted();
+        break;
+
         case "/question/to-restore":
             QuestionController::toRestore();
         break;

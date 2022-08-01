@@ -62,6 +62,17 @@
             return $stmt->fetchAll(PDO::FETCH_CLASS);
         }
 
+        function queryQuestionDeleted($data_query) {
+            $data = "%" . $data_query . "%";
+            $sql = "SELECT * FROM pergunta WHERE ativo = \"N\" AND descricao LIKE ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $data);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+
         function insertAnswer(QuestionModel $model, $arr_answer, $arr_ids) {
             for($i = 1; $i < $model->questions + 1; $i++) {
                 if($arr_answer[$i] != null) {
@@ -91,4 +102,5 @@
             $stmt->bindValue(1, $id);
             $stmt->execute();
         }
+
     }

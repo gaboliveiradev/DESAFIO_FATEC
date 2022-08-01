@@ -34,6 +34,11 @@
             header("Location: /question-manage");
         }
 
+        public static function clearQueryQuestionDeleted() {
+            unset($_GET['query']);
+            header("Location: /question/deleted");
+        }
+
         public static function saveQuestion() {
             $model = new QuestionModel();
             $model->id = $_POST['id'];
@@ -68,7 +73,12 @@
 
         public static function questionDeleted() {
             $model = new QuestionModel();
-            $arr_question_deleted = $model->getAllRowsWhereAtivo();
+
+            if(isset($_GET['query'])) {
+                $arr_question_deleted = $model->queryQuestionDeleted($_GET['query']);
+            } else {
+                $arr_question_deleted = $model->getAllRowsWhereAtivo();
+            }
             
             include "./View/modules/Question/question_deleted.php";
         }

@@ -14,6 +14,17 @@
     </header>
     <main>
         <section>
+            <div class="container-search">
+                <form action="/question/deleted?query=" method="GET" class="form-search d-flex">
+                    <input name="query" value="<?= (isset($_GET['query'])) ? $_GET['query'] : "" ?>" class="form-control me-2" type="search" placeholder="Buscar por palavra-chave" aria-label="Search">
+                    <button class="btn-buscar btn btn-primary" type="submit">Buscar</button> 
+                    <?php if(isset($_GET['query'])): ?>
+                        <a href="/question/deleted/clear-query" class="btn-limpar btn btn-danger" type="submit">
+                            <i class='bx bxs-x-square'></i>
+                        </a>
+                    <?php endif; ?>
+                </form>
+            </div>
             <div class="header-questions">
                 <h4>Perguntas Deletadas [<?= count($arr_question_deleted) ?>]</h4>
             </div>
