@@ -8,7 +8,6 @@
         public static function saveEmployee() {
             $model = new EmployeeModel();
 
-
             $model->name = $_POST['name_employee'];
             $model->email = $_POST['email_employee'];
             $model->pass = $_POST['password_employee'];
