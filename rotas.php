@@ -1,6 +1,6 @@
 <?php
     switch($parse_uri) {
-        // --= Question =--
+        // --= Question(Pergunta) =--
         case "/question-manage":
             QuestionController::questionManage();
         break;
@@ -37,13 +37,22 @@
             QuestionController::questionAnswer();
         break;
 
-        // --= Answer =--
+        // --= Answer(Resposta) =--
         case "/answer/save":
             QuestionController::saveAnswer();
         break;
 
         case "/answer-manage":
             AnswerController::answerManage();
+        break;
+
+        // --= Employee(Funcionário) =--
+        case "/employee/form":
+            EmployeeController::employeeForm();
+        break;
+
+        case "/employee/save":
+            EmployeeController::saveEmployee();
         break;
 
         // --= Login =--

@@ -32,7 +32,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                  <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                  <li><a class="dropdown-item" href="/employee/form">Cadastrar</a></li>
                 </ul>
               </li>
             <?php endif; ?>
