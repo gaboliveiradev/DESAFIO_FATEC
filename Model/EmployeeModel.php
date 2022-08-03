@@ -5,7 +5,7 @@
 
         public function saveEmployee() {
             $dao = new EmployeeDAO();
-            $dao->insertEmployee($this);
+            return($this->id == null) ? $dao->insertEmployee($this) : $dao->updateEmployee($this);
         }
 
         public function getAllRows() {
@@ -21,6 +21,6 @@
         public function getById(int $id) {
             $dao = new EmployeeDAO();
             $obj = $dao->getById( (int) $id);
-            return ($obj) ? $obj : new EmployeeModel    ();
+            return ($obj) ? $obj : new EmployeeModel();
         }
     }

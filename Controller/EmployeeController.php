@@ -19,7 +19,7 @@
             if(isset($_POST['adm_employee'])) $model->adm = $_POST['adm_employee'];
 
             $model->saveEmployee();
-            header("Location: /employee/form");
+            header("Location: /employee-manage");
         }
 
         public static function employeeManage() {

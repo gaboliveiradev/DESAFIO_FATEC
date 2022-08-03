@@ -23,6 +23,25 @@
             $stmt->execute();
         }
 
+        function updateEmployee(EmployeeModel $model) {
+            if($model->adm == null) {
+                $sql = "UPDATE funcionario SET nome = ?, email = ? WHERE id = ?";
+            } else {
+                $sql = "UPDATE funcionario SET nome = ?, email = ?, adm = ? WHERE id = ?";
+            }
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $model->name); 
+            $stmt->bindValue(2, $model->email); 
+            if($model->adm != null) {
+                $stmt->bindValue(3, $model->adm);
+                $stmt->bindValue(4, $model->id);
+            } else {
+                $stmt->bindValue(3, $model->id);
+            }
+            $stmt->execute();
+        }
+
         function deleteEmployee(int $id) {
             $sql = "DELETE FROM funcionario WHERE id = ?";
 
