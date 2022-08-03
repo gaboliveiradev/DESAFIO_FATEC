@@ -46,6 +46,10 @@
             AnswerController::answerManage();
         break;
 
+        case "/answer-manage/clear-filter":
+            AnswerController::clearFilter();
+        break;
+
         // --= Employee(Funcionário) =--
         case "/employee/form":
             EmployeeController::employeeForm();

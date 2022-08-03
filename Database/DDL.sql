@@ -4,6 +4,7 @@ USE agatecnologia_db;
 CREATE TABLE pergunta (
     id int auto_increment NOT NULL,
     descricao text NOT NULL,
+    ativo char(1) NOT NULL DEFAULT "S",
     primary key (id)
 );
 
@@ -11,6 +12,7 @@ CREATE TABLE resposta (
     id int auto_increment NOT NULL,
     id_pergunta int NOT NULL,
     descricao text NOT NULL,
+    data_envio TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key (id),
     foreign key (id_pergunta) references pergunta (id)
 );

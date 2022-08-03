@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: agatecnologia_db
+-- Host: 127.0.0.1    Database: agatecnologia_db
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -15,12 +15,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE agatecnologia_db;
+USE agatecnologia_db;
+
 --
 -- Table structure for table `funcionario`
 --
-
-CREATE DATABASE agatecnologia_db;
-USE agatecnologia_db;
 
 DROP TABLE IF EXISTS `funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -32,7 +32,7 @@ CREATE TABLE `funcionario` (
   `senha` varchar(100) NOT NULL,
   `adm` char(1) NOT NULL DEFAULT 'N',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `funcionario` (
 
 LOCK TABLES `funcionario` WRITE;
 /*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-INSERT INTO `funcionario` VALUES (1,'AGA Tecnologia','aga@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(2,'Eduardo Frasson','edu@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(3,'Tiagotas','tiagotas@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(4,'Edinho Lima Etec','edinho@teste.com','01b307acba4f54f55aafc33bb06bbbf6ca803e9a','N'),(5,'Charles da Etec','charles@teste.com','40bd001563085fc35165329ea1ff5c5ecbdbbeef','S'),(6,'Marcão Da TI','marcao@teste.com','40bd001563085fc35165329ea1ff5c5ecbdbbeef','S'),(14,'Zago Informáticas','zago@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(16,'Gabs','gabriel@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S');
+INSERT INTO `funcionario` VALUES (1,'AGA Tecnologia','aga@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(2,'Gabriel Oliveira','gabriel@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','N');
 /*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `pergunta` (
   `descricao` text NOT NULL,
   `ativo` char(1) NOT NULL DEFAULT 'S',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `pergunta` (
 
 LOCK TABLES `pergunta` WRITE;
 /*!40000 ALTER TABLE `pergunta` DISABLE KEYS */;
-INSERT INTO `pergunta` VALUES (16,'Em uma escala de 1 a 10, de 1 – extremamente insatisfeito a 10 – extremamente satisfeito, como você classificaria a [característica] de nosso produto?','N'),(17,'Em uma escala de 1 a 10, de 1 – extremamente insatisfeito a 10 – extremamente satisfeito, como você classificaria a [característica] de nosso produto?','S'),(18,'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx','S');
+INSERT INTO `pergunta` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed mauris turpis. Praesent fermentum ac nisi id placerat. Quisque non dictum libero, quis ultrices nunc?','S'),(2,'Curabitur sit amet sapien posuere, suscipit risus id, suscipit tellus. Sed quis lobortis odio. Ut eleifend iaculis pellentesque. Aliquam sed lorem vitae ante hendrerit rutrum. In lacinia molestie velit ac auctor?','S'),(3,'Nam nec ligula in ex commodo egestas id id lectus. Praesent cursus aliquam condimentum. In at magna faucibus, dapibus arcu eget, rutrum justo. Curabitur orci dui, finibus quis imperdiet id?','S');
 /*!40000 ALTER TABLE `pergunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `resposta` (
   PRIMARY KEY (`id`),
   KEY `id_pergunta` (`id_pergunta`),
   CONSTRAINT `resposta_ibfk_1` FOREIGN KEY (`id_pergunta`) REFERENCES `pergunta` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `resposta` (
 
 LOCK TABLES `resposta` WRITE;
 /*!40000 ALTER TABLE `resposta` DISABLE KEYS */;
-INSERT INTO `resposta` VALUES (1,16,'aaa','2022-07-31 23:08:27'),(2,17,'bbb','2022-07-31 23:08:27'),(3,18,'ccc','2022-07-31 23:08:27'),(4,16,'10','2022-07-31 23:08:27'),(5,17,'8','2022-07-31 23:08:27'),(6,18,'XXXTENTACION??','2022-07-31 23:08:27'),(7,17,'teste teste teste teste','2022-07-31 23:28:58'),(8,18,'mvc aaaaaaaaaaaaaaaaaaa','2022-07-31 23:28:58'),(9,17,'teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste ','2022-07-31 23:29:49'),(10,18,'','2022-07-31 23:29:49'),(11,17,'TESTANDO PARA RESPONDER APENAS 1 PERGUNTA DO QUESTIONÁRIO E NÃO PREENCHER O BANCO DE DADOS COMO VAZIO NQL PERGUNTA EM QUE EU NÃO ESCREVI NADA','2022-07-31 23:32:24');
+INSERT INTO `resposta` VALUES (1,1,'Nulla arcu nisl, pulvinar ac dictum et, facilisis hendrerit erat. Nulla euismod ligula vitae risus fringilla ullamcorper. Quisque malesuada nunc eu vulputate rhoncus. Mauris condimentum lorem ut quam mollis condimentum. Donec fringilla, velit sit amet viverra egestas, est nibh fermentum mauris, eget porta neque magna vel diam.','2022-08-03 18:13:24'),(2,2,'Nulla arcu nisl, pulvinar ac dictum et, facilisis hendrerit erat. Nulla euismod ligula vitae risus fringilla ullamcorper. Quisque malesuada nunc eu vulputate rhoncus. Mauris condimentum lorem ut quam mollis condimentum. Donec fringilla, velit sit amet viverra egestas, est nibh fermentum mauris, eget porta neque magna vel diam.','2022-08-03 18:13:24'),(3,3,'Nulla arcu nisl, pulvinar ac dictum et, facilisis hendrerit erat. Nulla euismod ligula vitae risus fringilla ullamcorper. Quisque malesuada nunc eu vulputate rhoncus. Mauris condimentum lorem ut quam mollis condimentum. Donec fringilla, velit sit amet viverra egestas, est nibh fermentum mauris, eget porta neque magna vel diam.','2022-08-03 18:13:24'),(4,1,'Duis vel ipsum at est auctor fermentum eget vitae arcu. Mauris ac sodales turpis, nec egestas sem. Nullam fermentum, augue ut condimentum aliquam, massa magna mollis nunc','2022-08-03 18:13:56'),(5,2,'Duis vel ipsum at est auctor fermentum eget vitae arcu. Mauris ac sodales turpis, nec egestas sem. Nullam fermentum, augue ut condimentum aliquam, massa magna mollis nunc','2022-08-03 18:13:56');
 /*!40000 ALTER TABLE `resposta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-02 22:42:58
+-- Dump completed on 2022-08-03 15:18:21

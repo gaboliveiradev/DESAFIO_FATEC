@@ -13,4 +13,9 @@
 
             include "./View/modules/Answer/answer-manage.php";
         }
+
+        public static function clearFilter() {
+            unset($_GET['filter']);
+            header("Location: /answer-manage");
+        }
     }

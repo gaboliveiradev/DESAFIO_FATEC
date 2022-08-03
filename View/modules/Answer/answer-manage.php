@@ -33,7 +33,7 @@
                         <li>
                           <hr class="dropdown-divider">
                         </li>
-                        <li><a class="nav-link text-danger" href="">Limpar Filtros</a></li>
+                        <li><a class="nav-link text-danger" href="/answer-manage/clear-filter">Limpar Filtros</a></li>
                       </ul>
                     </div>
                   </div>
@@ -55,6 +55,9 @@
                       </div>
                     </div>
                 <?php endforeach ?>
+                <?php if(count($arr_answer_question) == 0 || count($arr_answer_question_filter) == 0): ?>
+                    <p>Não existe nenhuma resposta cadastrada no momento.</p>
+                <?php endif; ?>
             </div>
         </section>
     </main>
