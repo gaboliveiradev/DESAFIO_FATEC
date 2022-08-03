@@ -37,7 +37,7 @@
                   <td><?= $item->adm ?></td>
                   <td>
                     <a href=""><i class='bx bxs-pencil'></i></a>
-                    <a href=""><i class='bx bxs-trash'></i></a>
+                    <a href="/employee/delete?id=<?= $item->id ?>"><i class='bx bxs-trash'></i></a>
                   </td>
                 </tr>
             <?php endforeach; ?>

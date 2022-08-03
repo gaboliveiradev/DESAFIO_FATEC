@@ -23,4 +23,10 @@
             
             include "./View/modules/Employee/employee_manage.php";
         }
+
+        public static function employeeDelete() {
+            $model = new EmployeeModel();
+            $model->deleteEmployee( (int) $_GET['id']);
+            header("Location: /employee-manage");
+        }
     }

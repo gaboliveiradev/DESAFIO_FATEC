@@ -12,4 +12,9 @@
             $dao = new EmployeeDAO();
             return $dao->getAllRows();
         }
+
+        public function deleteEmployee(int $id) {
+            $dao = new EmployeeDAO();
+            $dao->deleteEmployee( (int) $id);
+        }
     }

@@ -23,6 +23,14 @@
             $stmt->execute();
         }
 
+        function deleteEmployee(int $id) {
+            $sql = "DELETE FROM funcionario WHERE id = ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+        }
+
         function getAllRows() {
             $sql = "SELECT * FROM funcionario";
 

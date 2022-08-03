@@ -59,6 +59,10 @@
             EmployeeController::employeeManage();
         break;
 
+        case "/employee/delete":
+            EmployeeController::employeeDelete();
+        break;
+
         // --= Login =--
         case "/login":
             LoginController::loginView();
