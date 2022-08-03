@@ -16,7 +16,28 @@
     <main>
         <section>
             <div class="header-questions">
-                <h4>Respostas do Questionário [<?= count($arr_answer_question) ?>]</h4>
+                <h4>
+                    Respostas do Questionário [<?= count($arr_answer_question) ?>]
+                </h4>
+            </div>
+            <div class="filter-questions">
+                <div class="container text-left">
+                    <div class="dropdown">
+                      <a class="btn btn-secondary dropdown-toggle text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filtrar por Pergunta
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <?php foreach($arr_answer_question_filter as $item): ?>
+                            <li><a class="nav-link text-dark" href="/answer-manage?filter=<?= $item->id?>"><?= $item->descricao ?></a></li>
+                        <?php endforeach; ?>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="nav-link text-danger" href="">Limpar Filtros</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="container-questions">
                 <?php foreach ($arr_answer_question as $item): ?>
