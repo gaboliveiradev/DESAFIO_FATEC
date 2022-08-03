@@ -7,4 +7,9 @@
             $dao = new EmployeeDAO();
             $dao->insertEmployee($this);
         }
+
+        public function getAllRows() {
+            $dao = new EmployeeDAO();
+            return $dao->getAllRows();
+        }
     }

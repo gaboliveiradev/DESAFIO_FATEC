@@ -22,4 +22,13 @@
             if($model->adm != null) $stmt->bindValue(4, $model->adm);
             $stmt->execute();
         }
-    }
+
+        function getAllRows() {
+            $sql = "SELECT * FROM funcionario";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }
+    } 

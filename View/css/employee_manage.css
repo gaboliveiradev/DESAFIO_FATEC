@@ -1,0 +1,14 @@
+.container-employee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-employees {
+    width: 70%;
+}
+
+.section-header h1 {
+    margin-top: 15px;
+}

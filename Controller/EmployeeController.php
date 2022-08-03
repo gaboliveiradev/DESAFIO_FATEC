@@ -16,4 +16,11 @@
             $model->saveEmployee();
             header("Location: /employee/form");
         }
+
+        public static function employeeManage() {
+            $model = new EmployeeModel();
+            $arr_employee = $model->getAllRows();
+            
+            include "./View/modules/Employee/employee_manage.php";
+        }
     }

@@ -31,7 +31,7 @@
                   Funcionários
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li><a class="dropdown-item" href="/employee-manage">Visualizar</a></li>
                   <li><a class="dropdown-item" href="/employee/form">Cadastrar</a></li>
                 </ul>
               </li>

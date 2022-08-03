@@ -36,13 +36,11 @@
                 <label class="form-check-label" for="exampleCheck1">Administrador</label>
             </div>
             <div class="d-grid gap-2">
-              <br>
-              <?php $msg = (!isset($_GET['id'])) ? "Registrar" : "Atualizar" ?>
-              <button class="btn btn-dark" type="submit"><?= $msg ?></button>
+                <?php $msg = (!isset($_GET['id'])) ? "Registrar" : "Atualizar" ?>
+                <button class="btn btn-dark" type="submit"><?= $msg ?></button>
             </div>
         </form>
     </main>
-
     <?php include "./View/includes/js_config.php" ?>
 </body>
 </html>
