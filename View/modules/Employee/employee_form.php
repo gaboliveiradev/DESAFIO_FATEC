@@ -18,19 +18,21 @@
                 <h3>AGA Tecnologia - Cadastrar Funcionário</h3>
                 <hr>
             </div>
-            <input type="hidden" name="id" value="">
+            <input type="hidden" name="id" value="<?= $model->id ?>">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nome</label>
-                <input name="name_employee" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input value="<?= $model->nome ?>" name="name_employee" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input name="email_employee" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input value="<?= $model->email ?>" name="email_employee" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Senha</label>
-                <input name="password_employee" type="password" class="form-control" id="exampleInputPassword1">
-            </div>
+            <?php if(!isset($_GET['id'])): ?>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Senha</label>
+                    <input value="<?= $model->pass ?>" name="password_employee" type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+            <?php endif; ?>
             <div class="mb-3 form-check">
                 <input name="adm_employee" value="S" type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Administrador</label>

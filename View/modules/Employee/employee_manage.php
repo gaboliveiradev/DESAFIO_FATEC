@@ -36,7 +36,7 @@
                   <?php $item->adm = ($item->adm == "S") ? "<i class='bx bx-check'></i>" : "<i class='bx bx-x'></i>" ?>
                   <td><?= $item->adm ?></td>
                   <td>
-                    <a href=""><i class='bx bxs-pencil'></i></a>
+                    <a href="/employee/form?id=<?= $item->id ?>"><i class='bx bxs-pencil'></i></a>
                     <a href="/employee/delete?id=<?= $item->id ?>"><i class='bx bxs-trash'></i></a>
                   </td>
                 </tr>

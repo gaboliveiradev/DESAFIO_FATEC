@@ -2,12 +2,17 @@
     class EmployeeController extends Controller {
         
         public static function employeeForm() {
-            include "./View/modules/Employee/employee_form.php";
+            parent::isAuthenticated();
+            $model = new EmployeeModel();
+            if(isset($_GET['id'])) $model = $model->getById( (int) $_GET['id']);
+
+            parent::render("Employee/employee_form", $model);
         }
 
         public static function saveEmployee() {
             $model = new EmployeeModel();
 
+            $model->id = $_POST['id'];
             $model->name = $_POST['name_employee'];
             $model->email = $_POST['email_employee'];
             $model->pass = $_POST['password_employee'];

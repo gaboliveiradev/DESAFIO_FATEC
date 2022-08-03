@@ -31,6 +31,16 @@
             $stmt->execute();
         }
 
+        function getById(int $id) {
+            $sql = "SELECT * FROM funcionario WHERE id = ?";
+
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+            
+            return $stmt->fetchObject("EmployeeModel");
+        }
+
         function getAllRows() {
             $sql = "SELECT * FROM funcionario";
 

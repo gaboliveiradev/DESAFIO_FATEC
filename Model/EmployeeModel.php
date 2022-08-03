@@ -17,4 +17,10 @@
             $dao = new EmployeeDAO();
             $dao->deleteEmployee( (int) $id);
         }
+
+        public function getById(int $id) {
+            $dao = new EmployeeDAO();
+            $obj = $dao->getById( (int) $id);
+            return ($obj) ? $obj : new EmployeeModel    ();
+        }
     }
