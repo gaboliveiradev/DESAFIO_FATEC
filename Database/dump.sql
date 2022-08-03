@@ -19,9 +19,6 @@
 -- Table structure for table `funcionario`
 --
 
-CREATE DATABASE agatecnologia_db;
-USE agatecnologia_db;
-
 DROP TABLE IF EXISTS `funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -32,7 +29,7 @@ CREATE TABLE `funcionario` (
   `senha` varchar(100) NOT NULL,
   `adm` char(1) NOT NULL DEFAULT 'N',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +38,7 @@ CREATE TABLE `funcionario` (
 
 LOCK TABLES `funcionario` WRITE;
 /*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-INSERT INTO `funcionario` VALUES (1,'AdminAGA','agatecnologia@admin.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(2,'Gabriel Oliveira','gabriel@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','N');
+INSERT INTO `funcionario` VALUES (1,'AGA Tecnologia','aga@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(2,'Eduardo Frasson','edu@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(3,'Tiagotas','tiagotas@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(4,'Edinho Lima Etec','edinho@teste.com','01b307acba4f54f55aafc33bb06bbbf6ca803e9a','N'),(5,'Charles da Etec','charles@teste.com','40bd001563085fc35165329ea1ff5c5ecbdbbeef','S'),(6,'Marcão Da TI','marcao@teste.com','40bd001563085fc35165329ea1ff5c5ecbdbbeef','S'),(14,'Zago Informáticas','zago@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S'),(16,'Gabs','gabriel@teste.com','f7c3bc1d808e04732adf679965ccc34ca7ae3441','S');
 /*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-01  6:53:02
+-- Dump completed on 2022-08-02 22:42:58
