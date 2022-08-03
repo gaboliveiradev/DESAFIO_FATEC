@@ -30,16 +30,19 @@
         }
 
         public static function clearQuery() {
+            parent::isAuthenticated();
             unset($_GET['query']);
             header("Location: /question-manage");
         }
 
         public static function clearQueryQuestionDeleted() {
+            parent::isAuthenticated();
             unset($_GET['query']);
             header("Location: /question/deleted");
         }
 
         public static function saveQuestion() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
             $model->id = $_POST['id'];
             $model->descricao = $_POST['descricao'];
@@ -48,12 +51,14 @@
         }
 
         public static function deleteQuestion() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
             $model->delete( (int) $_GET['id']);
             header("Location: /question-manage");
         }
 
         public static function saveAnswer() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
             $arr_question = $model->getAllRows();
             $arr_answer = []; 
@@ -72,6 +77,7 @@
         }
 
         public static function questionDeleted() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
 
             if(isset($_GET['query'])) {
@@ -84,6 +90,7 @@
         }
 
         public static function toRestore() {
+            parent::isAuthenticated();
             $model = new QuestionModel();
             $model->toRestore( (int) $_GET['id'] );
 

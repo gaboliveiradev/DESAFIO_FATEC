@@ -10,6 +10,7 @@
         }
 
         public static function saveEmployee() {
+            parent::isAuthenticated();
             $model = new EmployeeModel();
 
             $model->id = $_POST['id'];
@@ -23,6 +24,7 @@
         }
 
         public static function employeeManage() {
+            parent::isAuthenticated();
             $model = new EmployeeModel();
             $arr_employee = $model->getAllRows();
             
@@ -30,6 +32,7 @@
         }
 
         public static function employeeDelete() {
+            parent::isAuthenticated();
             $model = new EmployeeModel();
             $model->deleteEmployee( (int) $_GET['id']);
             header("Location: /employee-manage");
