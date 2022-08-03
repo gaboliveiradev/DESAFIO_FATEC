@@ -13,7 +13,7 @@
             $model = new EmployeeModel();
 
             $model->id = $_POST['id'];
-            $model->name = $_POST['name_employee'];
+            $model->nome = $_POST['name_employee'];
             $model->email = $_POST['email_employee'];
             $model->pass = $_POST['password_employee'];
             if(isset($_POST['adm_employee'])) $model->adm = $_POST['adm_employee'];

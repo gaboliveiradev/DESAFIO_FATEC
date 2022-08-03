@@ -16,7 +16,7 @@
             }
 
             $stmt = $this->conexao->prepare($sql);
-            $stmt->bindValue(1, $model->name);
+            $stmt->bindValue(1, $model->nome);
             $stmt->bindValue(2, $model->email);
             $stmt->bindValue(3, sha1($model->pass) );
             if($model->adm != null) $stmt->bindValue(4, $model->adm);
@@ -31,7 +31,7 @@
             }
 
             $stmt = $this->conexao->prepare($sql);
-            $stmt->bindValue(1, $model->name); 
+            $stmt->bindValue(1, $model->nome); 
             $stmt->bindValue(2, $model->email); 
             if($model->adm != null) {
                 $stmt->bindValue(3, $model->adm);
