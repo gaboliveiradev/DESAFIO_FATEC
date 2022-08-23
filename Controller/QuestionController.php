@@ -1,4 +1,7 @@
 <?php
+    namespace DESAFIO_FATEC\Controller;
+    use DESAFIO_FATEC\Model\QuestionModel;
+
     class QuestionController extends Controller {
 
         public static function questionForm() {
