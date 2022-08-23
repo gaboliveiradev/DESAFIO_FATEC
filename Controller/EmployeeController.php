@@ -1,4 +1,7 @@
 <?php
+    namespace DESAFIO_FATEC\Controller;
+    use DESAFIO_FATEC\Model\EmployeeModel;
+
     class EmployeeController extends Controller {
         
         public static function employeeForm() {

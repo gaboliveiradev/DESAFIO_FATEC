@@ -1,4 +1,7 @@
 <?php
+    namespace DESAFIO_FATEC\Model;
+    use DESAFIO_FATEC\DAO\EmployeeDAO;
+
     class EmployeeModel {
         
         public $id, $nome, $email, $pass, $adm = null;

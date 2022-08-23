@@ -1,4 +1,9 @@
 <?php
+    namespace DESAFIO_FATEC\DAO;
+    use DESAFIO_FATEC\Model\EmployeeModel;
+    use DESAFIO_FATEC\MySQL\MySQL;
+    use \PDO;
+
     class EmployeeDAO {
         public $conexao;
         public function __construct()
