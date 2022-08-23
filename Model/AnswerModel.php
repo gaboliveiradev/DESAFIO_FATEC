@@ -1,4 +1,7 @@
 <?php
+    namespace DESAFIO_FATEC\Model;
+    use DESAFIO_FATEC\DAO\AnswerDAO;
+
     class AnswerModel {
         
         public function getAllRows() {

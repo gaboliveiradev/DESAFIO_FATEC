@@ -1,4 +1,8 @@
 <?php
+    namespace DESAFIO_FATEC\DAO;
+    use DESAFIO_FATEC\MySQL\MySQL;
+    use \PDO;
+
     class AnswerDAO {
         public $conexao;
         public function __construct()

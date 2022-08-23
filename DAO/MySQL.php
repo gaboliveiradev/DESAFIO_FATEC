@@ -1,4 +1,8 @@
 <?php
+    namespace DESAFIO_FATEC\MySQL;
+    use \PDO;
+    use \PDOException;
+
     class MySQL extends PDO {
         private $dsn = 'mysql:host=localhost:3307;dbname=agatecnologia_db';
         private $user = "root";

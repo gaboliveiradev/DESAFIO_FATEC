@@ -1,5 +1,8 @@
 <?php
-    Class AnswerController extends Controller {
+    namespace DESAFIO_FATEC\Controller;
+    use DESAFIO_FATEC\Model\AnswerModel;
+
+    class AnswerController extends Controller {
         
         public static function answerManage() {
             parent::isAuthenticated();

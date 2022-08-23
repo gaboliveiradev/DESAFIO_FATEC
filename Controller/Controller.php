@@ -1,4 +1,6 @@
 <?php
+    namespace DESAFIO_FATEC\Controller;
+
     abstract class Controller {
 
         protected static function isAuthenticated() {
