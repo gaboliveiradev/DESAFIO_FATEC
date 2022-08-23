@@ -1,4 +1,7 @@
 <?php
+    namespace DESAFIO_FATEC\Controller;
+    use DESAFIO_FATEC\Model\LoginModel;
+
     class LoginController extends Controller {
 
         public static function loginView() {
