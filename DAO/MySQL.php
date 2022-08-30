@@ -3,18 +3,16 @@
     use \PDO;
     use \PDOException;
 
-    class MySQL extends PDO {
-        private $dsn = 'mysql:host=localhost:3307;dbname=agatecnologia_db';
-        private $user = "root";
-        private $pass = "etecjau";
-
+    abstract class MySQL extends PDO {
         public function __construct()
         {
             try {
+                $dsn = "mysql:host=" . $_ENV['db']['host'] . ";dbname=" . $_ENV['db']['database'];
+
                 return parent::__construct(
                     $this->dsn, 
-                    $this->user, 
-                    $this->pass, 
+                    $_ENV['db']['user'], 
+                    $_ENV['db']['pass'], 
                     [PDO::MYSQL_ATTR_INIT_COMMAND =>  "SET NAMES 'UTF8'"]
                 );
             } catch (PDOException $e) {
