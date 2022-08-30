@@ -1,4 +1,11 @@
 <?php
+    use DESAFIO_FATEC\Controller\{
+        QuestionController,
+        AnswerController,
+        EmployeeController,
+        LoginController
+    };
+
     switch($parse_uri) {
         // --= Question(Pergunta) =--
         case "/question-manage":
