@@ -4,13 +4,11 @@
     use DESAFIO_FATEC\MySQL\MySQL;
     use \PDO;
 
-    class QuestionDAO {
+    class QuestionDAO extends MySQL {
         public $conexao;
         public function __construct()
         {
-            include_once 'MySQL.php';
-    
-            $this->conexao = new MySQL();
+            parent::__construct();  
         }  
 
         function insertQuestion(QuestionModel $model) {
