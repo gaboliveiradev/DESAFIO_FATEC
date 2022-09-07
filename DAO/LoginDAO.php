@@ -1,15 +1,12 @@
 <?php
     namespace DESAFIO_FATEC\DAO;
     use DESAFIO_FATEC\Model\LoginModel;
-    use DESAFIO_FATEC\MySQL\MySQL;
 
-    class LoginDAO {
+    class LoginDAO extends DAO {
         public $conexao;
         public function __construct()
         {
-            include_once 'MySQL.php';
-    
-            $this->conexao = new MySQL();
+            parent::__construct();  
         } 
 
         function selectByUserForLogin(LoginModel $model) {

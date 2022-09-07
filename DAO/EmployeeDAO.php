@@ -1,16 +1,13 @@
 <?php
     namespace DESAFIO_FATEC\DAO;
     use DESAFIO_FATEC\Model\EmployeeModel;
-    use DESAFIO_FATEC\MySQL\MySQL;
     use \PDO;
 
-    class EmployeeDAO {
+    class EmployeeDAO extends DAO {
         public $conexao;
         public function __construct()
         {
-            include_once "MySQL.php";
-
-            $this->conexao = new MySQL();
+            parent::__construct();  
         }
 
         function insertEmployee(EmployeeModel $model) {
