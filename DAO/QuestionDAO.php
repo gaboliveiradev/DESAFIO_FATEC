@@ -1,11 +1,11 @@
 <?php
     namespace DESAFIO_FATEC\DAO;
     use DESAFIO_FATEC\Model\QuestionModel;
-    use DESAFIO_FATEC\MySQL\MySQL;
     use \PDO;
 
-    class QuestionDAO extends MySQL {
+    class QuestionDAO extends DAO {
         public $conexao;
+        
         public function __construct()
         {
             parent::__construct();  
